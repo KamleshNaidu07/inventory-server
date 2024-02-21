@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,9 @@ Route::put('/categories/{id}', [CategoryController::class, 'update']); // to upd
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy']); // to delete a category
 
 
+/* Suppliers apis */
+Route::get('/suppliers', [SupplierController::class, 'index']); // List all suppliers
+Route::get('/suppliers/{id}', [SupplierController::class, 'show']); // List supplier by id
+Route::post('/suppliers', [SupplierController::class, 'store']); // to create new supplier
+Route::put('/suppliers/{id}', [SupplierController::class, 'update']); // to update a supplier
+Route::delete('/suppliers/{id}', [SupplierController::class, 'destroy']); // to delete a supplier

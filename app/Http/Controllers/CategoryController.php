@@ -34,9 +34,9 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-        $category = Category::findOrFail($id);
-        $category->children()->delete();
-        $category->delete();
-        return response()->json(null, 204);
+        // $category = Category::findOrFail($id);
+        // $category->children()->delete();
+        // $category->delete();
+        // return response()->json(null, 204);
     }
 }
