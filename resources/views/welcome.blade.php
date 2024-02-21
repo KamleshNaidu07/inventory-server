@@ -24,6 +24,11 @@
             font-family: "Creepster", system-ui;
             font-weight: 400;
             font-style: normal;
+            color: #ffffff
+        }
+
+        .creepster-regular span{
+            color: red;
         }
 
         :root {
@@ -148,8 +153,8 @@
         </div>
     </div>
     <div class="shadow"></div>
-    <div style="color:#ffffff;">
-        <h1 class="creepster-regular">Welcome to my <span style="color:red;">inventory</span></h1>
+    <div class="welcome-heading">
+        <h1 class="creepster-regular">Welcome to my <span>inventory</span></h1>
     </div>
 </body>
 
