@@ -514,6 +514,60 @@
                 },
                 "type": "object"
             },
+            "Product": {
+                "title": "Product",
+                "description": "Product model",
+                "properties": {
+                    "id": {
+                        "description": "ID of the product",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "description": "Name of the product",
+                        "type": "string",
+                        "example": "Example Product"
+                    },
+                    "description": {
+                        "description": "Description of the product",
+                        "type": "string",
+                        "example": "Example product description."
+                    },
+                    "quantity": {
+                        "description": "Quantity of the product",
+                        "type": "integer",
+                        "example": 10
+                    },
+                    "price": {
+                        "description": "Price of the product",
+                        "type": "number",
+                        "format": "float",
+                        "example": 19.99
+                    },
+                    "category_id": {
+                        "description": "ID of the associated category",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "supplier_id": {
+                        "description": "ID of the associated supplier",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "image_url": {
+                        "description": "URL of the product's image",
+                        "type": "string",
+                        "example": "https://example.com/product_image.jpg"
+                    },
+                    "price_formatted": {
+                        "description": "Formatted price of the product with two decimal places",
+                        "type": "string",
+                        "readOnly": true,
+                        "example": "19.99"
+                    }
+                },
+                "type": "object"
+            },
             "Supplier": {
                 "title": "Supplier",
                 "description": "Supplier model",
