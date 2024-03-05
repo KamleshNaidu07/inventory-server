@@ -305,6 +305,268 @@
                     }
                 }
             }
+        },
+        "/api/suppliers": {
+            "get": {
+                "tags": [
+                    "Suppliers"
+                ],
+                "summary": "Get the list of suppliers",
+                "operationId": "43efd859bdde27a9e53c0afbe0891731",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Suppliers"
+                ],
+                "summary": "Create a new supplier",
+                "operationId": "c1ee06af9e1f197a4aa49c1dd74c981c",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "contact_name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "phone_number": {
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "website": {
+                                        "type": "string"
+                                    },
+                                    "payment_terms": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Supplier created"
+                    }
+                }
+            }
+        },
+        "/api/suppliers/{id}": {
+            "get": {
+                "tags": [
+                    "Suppliers"
+                ],
+                "summary": "Get a specific supplier by ID",
+                "operationId": "6be0f2389de5f1d79708c391d4cb0156",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the supplier",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "404": {
+                        "description": "Supplier not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Suppliers"
+                ],
+                "summary": "Update an existing supplier",
+                "operationId": "837f3815469c658c6255d5037dc09f5c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the supplier",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "contact_name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "phone_number": {
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "website": {
+                                        "type": "string"
+                                    },
+                                    "payment_terms": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Supplier updated"
+                    },
+                    "404": {
+                        "description": "Supplier not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Suppliers"
+                ],
+                "summary": "Delete a supplier",
+                "operationId": "4498097c7247888776baa62b3ff682c5",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the supplier",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Supplier deleted"
+                    },
+                    "404": {
+                        "description": "Supplier not found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Category": {
+                "title": "Category",
+                "description": "Category model",
+                "properties": {
+                    "id": {
+                        "description": "ID of the category",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "description": "Name of the category",
+                        "type": "string",
+                        "example": "Example Category"
+                    },
+                    "description": {
+                        "description": "Description of the category",
+                        "type": "string",
+                        "example": "Example category description."
+                    },
+                    "parent_id": {
+                        "description": "ID of the parent category",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "formatted_name": {
+                        "description": "Formatted name of the category with indentation based on depth",
+                        "type": "string",
+                        "readOnly": true,
+                        "example": "- Example Category"
+                    }
+                },
+                "type": "object"
+            },
+            "Supplier": {
+                "title": "Supplier",
+                "description": "Supplier model",
+                "properties": {
+                    "id": {
+                        "description": "ID of the supplier",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "description": "Name of the supplier",
+                        "type": "string",
+                        "example": "Example Supplier"
+                    },
+                    "contact_name": {
+                        "description": "Contact name of the supplier",
+                        "type": "string",
+                        "example": "John Doe"
+                    },
+                    "email": {
+                        "description": "Email address of the supplier",
+                        "type": "string",
+                        "example": "john.doe@example.com"
+                    },
+                    "phone_number": {
+                        "description": "Phone number of the supplier",
+                        "type": "string",
+                        "example": "123-456-7890"
+                    },
+                    "address": {
+                        "description": "Address of the supplier",
+                        "type": "string",
+                        "example": "123 Main St, City, Country"
+                    },
+                    "website": {
+                        "description": "Website URL of the supplier",
+                        "type": "string",
+                        "example": "http://www.supplierwebsite.com"
+                    },
+                    "payment_terms": {
+                        "description": "Payment terms for the supplier",
+                        "type": "string",
+                        "example": "Net 30 days"
+                    },
+                    "website_link": {
+                        "description": "Formatted link to the supplier's website",
+                        "type": "string",
+                        "readOnly": true,
+                        "example": "<a href='http://www.supplierwebsite.com' target='_blank'>http://www.supplierwebsite.com</a>"
+                    }
+                },
+                "type": "object"
+            }
         }
     },
     "tags": [
@@ -313,6 +575,9 @@
         },
         {
             "name": "Products"
+        },
+        {
+            "name": "Suppliers"
         }
     ]
 }
